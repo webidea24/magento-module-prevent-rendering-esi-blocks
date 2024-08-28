@@ -1,0 +1,26 @@
+{
+    "name": "webidea24/magento2-module-prevent-rendering-esi-blocks",
+    "description": "Magento 2 Extension: Prevent rendering ESI blocks",
+    "type": "magento2-module",
+    "require": {
+        "magento/module-page-cache": "*",
+        "php": "^8.2"
+    },
+    "license": [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "WEBiDEA",
+            "homepage": "https://www.webidea24.de/"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "Webidea24\\VarnishPreventRenderEsiBlock\\": "src/"
+        }
+    }
+}
