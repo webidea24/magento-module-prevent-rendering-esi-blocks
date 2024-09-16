@@ -22,7 +22,12 @@ class LayoutPlugin
     {
         $block = $subject->getBlock($name);
 
-        if ($block instanceof AbstractBlock && is_numeric($block->getTtl()) && ((int)$block->getTtl()) > 0 && $this->isVarnishEnabled()) {
+        if ($block instanceof AbstractBlock
+            && is_numeric($block->getTtl())
+            && ((int)$block->getTtl()) > 0
+            && $this->isVarnishEnabled()
+            && $block->getLayout()->isCacheable()
+        ) {
             return ''; // esi tag will be added by event observer `core_layout_render_element`
         }
 
